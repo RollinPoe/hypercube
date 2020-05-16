@@ -33,7 +33,7 @@ client.on("message", (message) => {
             case 'cs^3': case 'cs3': case 'csss':
                 message.channel.send("The Cogntive Science Student Society at SFU is here for all CogSci students, no matter if you're a major, minor, or just taking a class. We organize events like study sessions, pub nights with profs, or just chances to hang out. We can help with questions you have about classes (content or which to take), the program, or Cognitive Science in general. We also represent and advocate for you to groups like the school administration and SFSS. If you want to know more drop by one of out meetings (!meetings) or message one of the executives.")
                 break;
-            case 'classes':
+            case 'classes': case 'class':
                 message.channel.send("The current COGS classes for Summer 2020 are:\n**COGS100** - Exploring the Mind\n**COGS110** - Learning in Everyday Life\nCheck out their channels. If you're looking for CMPT, LING, PHIL, or PSYC classes specifically, there's more info in their respective class channels.\n\nWant to know about the CogSci program? Try typing !program");
                 break;
             case 'program':
