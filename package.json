@@ -4,11 +4,12 @@
   "description": "HyperCube is a bot for the SFU Cognitive Science Student Society's [discord channel](discord.gg/FuX4vHN).",
   "main": "hypercube.js",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {},
-  "scripts": { 
-    "start": "node hypercube.js" 
+  "scripts": {
+    "start": "node hypercube.js"
   },
   "repository": {
     "type": "git",

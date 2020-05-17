@@ -1,8 +1,11 @@
+require('dotenv').config();
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require("./config.json");
+// const config = require("./config.json");
 
-client.login(config.token);
+// client.login(config.token);
+client.login(process.env.DISCORD_TOKEN);
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -12,7 +15,7 @@ client.on("message", (message) => {
     // Our client needs to know if it will execute a command
     // It will listen for messages that will start with `!`
 
-    if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+    if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
     // var args = message.content.split(' ')[1]
     var messagesContentString = message.content;
 
@@ -24,7 +27,7 @@ client.on("message", (message) => {
         switch(cmd) {
             // !ping
             case 'ド':
-                if(message.author.id !== config.ownerID) break;
+                if(message.author.id !== process.env.OWNER_ID) break;
                 message.channel.send("キ")
                 break;
             case 'cujcs':
