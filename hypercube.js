@@ -55,13 +55,18 @@ client.on("message", (message) => {
             case 'commands': case 'help':
                 message.channel.send("**!CS^3/CS3/CSSS** - About the Cognitive Science Student Society\n**!classes** - About the classes for the current semester\**!program** - About the Cognitive Science program\n**!CUJCS** - About CUJCS\n**!execs** - About the executives of CS^3\n**!meetings** - About CS^3 meetings\n**!help/commands** - About the commands you can call\n**!HyperCube** - About me! The HyperCube client! ɔ-【°ッ°】-c")
                 break;
-            // case 'embed':
-            //     message.channel.send({embed: {
-            //         color: 0xf8a861,
-            //         description: "**!CS^3/CS3/CSSS** - About the Cognitive Science Student Society\n**!classes** - About the classes for the current semester\**!program** - About the Cognitive Science program\n**!CUJCS** - About CUJCS\n**!execs** - About the executives of CS^3\n**!meetings** - About CS^3 meetings\n**!HyperCube** - About me! The HyperCube client! ɔ-【°ッ°】-c"
-            //         }
-            //     });
-            //     break;
+            case 'embed':
+                if(message.author.id !== process.env.OWNER_ID) break;
+                message.channel.send({embed: {
+                    color: 0xf8a861,
+                    description: "**!CS^3/CS3/CSSS** - About the Cognitive Science Student Society\n**!classes** - About the classes for the current semester\**!program** - About the Cognitive Science program\n**!CUJCS** - About CUJCS\n**!execs** - About the executives of CS^3\n**!meetings** - About CS^3 meetings\n**!HyperCube** - About me! The HyperCube client! ɔ-【°ッ°】-c"
+                    }
+                });
+                break;
+            case 'reply':
+                if(message.author.id !== process.env.OWNER_ID) break;
+                message.reply("Replying directly")
+                break;            
 
             default:
                 message.channel.send("๑•́ㅿ•̀๑) ᔆᵒʳʳᵞ I didn't recognize that command. Try !commands for a list of commands.\nIs there a bug? Message my creator, Rollin")
