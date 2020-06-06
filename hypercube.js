@@ -116,5 +116,6 @@ client.on('guildMemberAdd', member => {
       .catch(console.error);
   });
 
+//Version: 1.2
 
 // Adapted from https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/, https://anidiots.guide/first-bot/your-first-bot, and https://medium.com/davao-js/2019-tutorial-creating-your-first-simple-discord-bot-47fc836a170b and a bit from https://stackoverflow.com/questions/57185028/what-is-the-function-of-createdm-method-for-user
