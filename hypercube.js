@@ -34,7 +34,7 @@ client.on("message", (message) => {
                 message.channel.send("The Canadian Undergraduate Journal of Cognitive Science is a premiere student journal showcasing undergraduate work from students in the cognitive science from across Canada and around the world. We have finished the final round of reviews and are moving towards publication.\nFind out more at <https://cujcs.ca> or message the project director, Rollin")
                 break;
             case 'cs^3': case 'cs3': case 'csss':
-                message.channel.send("The Cogntive Science Student Society at SFU is here for all CogSci students, no matter if you're a major, minor, or just taking a class. We organize events like study sessions, pub nights with profs, or just chances to hang out. We can help with questions you have about classes (content or which to take), the program, or Cognitive Science in general. We also represent and advocate for you to groups like the school administration and SFSS. If you want to know more drop by one of out meetings (!meetings) or message one of the executives.")
+                message.channel.send("The Cogntive Science Student Society at SFU is here for all CogSci students, no matter if you're a major, minor, or just taking a class. We organize events like study sessions, pub nights with profs, or just chances to hang out. We can help with questions you have about classes (content or which to take), the program, or Cognitive Science in general. We also represent and advocate for you to groups like the school administration and SFSS. If you want to know more drop by one of out meetings (!meeting) or message one of the executives.")
                 break;
             case 'classes': case 'class':
                 message.channel.send("The current COGS classes for Summer 2020 are:\n**COGS100** - Exploring the Mind\n**COGS110** - Learning in Everyday Life\nCheck out their channels. If you're looking for CMPT, LING, PHIL, or PSYC classes specifically, there's more info in their respective class channels. Try !cogs100, !cogs310, etc. to learn more about a specific COGS course.\n\nWant to know about the CogSci program? Try typing !program");
@@ -61,20 +61,21 @@ client.on("message", (message) => {
                 message.channel.send("The current executives are:\n**Rollin Poe** - President\n**Clover Kang** - Communication Director\n\nInterested in joining the executive board? Send a message to one of the executives")
                 break;
             case 'meetings':
-                message.channel.send("Meetings for CS^3 for this term take place here on discord. Usually Mondays at 13:30. We will send out an announcement requesting agenda items and confirming the time before every general meeting.")
+            case 'meeting':
+                message.channel.send("Meetings for CS^3 for this term take place here on discord. Our next meeting is **Friday, July 3 at 15:30**. If you have items you would like added to the agenda, message an executive. Everyone is welcome to drop by.")
                 break;
             case 'hypercube':
-                let greetings = ["你好 (Hello)", "Saluton (Hello)", "Bonjour (Hello)", "Χαίρετε (Hello)", "हैलो (Hello)", "Ciao (Hello)", "こんにちは (Hello)", "안녕하세요 (Hello)", "Kia ora (Hello)", "Сайн байна уу (Hello)", "ਸਤ ਸ੍ਰੀ ਅਕਾਲ (Hello)" ,"Olá (Hello)", "Привет (Hello)", "Здраво (Hello)", "Hola (Hello)", "Habari (Hello)", "வணக்கம் (Hello)", "สวัสดี (Hello)", "Merhaba (Hello)", "Xin chào (Hello)", "Hello, world", "48656c6c6f (Hello"]
+                let greetings = ["你好 (Hello)", "Saluton (Hello)", "Bonjour (Hello)", "Χαίρετε (Hello)", "हैलो (Hello)", "Ciao (Hello)", "こんにちは (Hello)", "안녕하세요 (Hello)", "Kia ora (Hello)", "Сайн байна уу (Hello)", "ਸਤ ਸ੍ਰੀ ਅਕਾਲ (Hello)" ,"Olá (Hello)", "Привет (Hello)", "Здраво (Hello)", "Hola (Hello)", "Habari (Hello)", "வணக்கம் (Hello)", "สวัสดี (Hello)", "Merhaba (Hello)", "Xin chào (Hello)", "Hello, world", "48656c6c6f (Hello)"]
                 message.channel.send(greetings[Math.floor(Math.random() * 22)] + "! I'm HyperCube, the bot for the Cognitive Science Student Society discord. You can check out my commands with !commands or !help. I'm maintained by Rollin, so send him a mesage if you find a bug or have a suggestion.")
                 break;
             case 'commands': case 'help':
-                message.channel.send("**!CS^3/CS3/CSSS** - About the Cognitive Science Student Society\n**!classes** - About the classes for the current semester. Also try !cogs100, !cogs310, etc.\n**!program** - About the Cognitive Science program\n**!CUJCS** - About CUJCS\n**!execs** - About the executives of CS^3\n**!meetings** - About CS^3 meetings\n**!help/commands** - About the commands you can call\n**!HyperCube** - About me! The HyperCube bot! ɔ-【°ッ°】-c")
+                message.channel.send("**!CS^3/CS3/CSSS** - About the Cognitive Science Student Society\n**!classes** - About the classes for the current semester. Also try !cogs100, !cogs310, etc.\n**!program** - About the Cognitive Science program\n**!CUJCS** - About CUJCS\n**!execs** - About the executives of CS^3\n**!meeting** - About CS^3 meetings\n**!help/commands** - About the commands you can call\n**!HyperCube** - About me! The HyperCube bot! ɔ-【°ッ°】-c")
                 break;
             case 'embed':
                 if(message.author.id !== process.env.OWNER_ID) break;
                 message.channel.send({embed: {
                     color: 0xf8a861,
-                    description: "**!CS^3/CS3/CSSS** - About the Cognitive Science Student Society\n**!classes** - About the classes for the current semester\**!program** - About the Cognitive Science program\n**!CUJCS** - About CUJCS\n**!execs** - About the executives of CS^3\n**!meetings** - About CS^3 meetings\n**!HyperCube** - About me! The HyperCube bot! ɔ-【°ッ°】-c"
+                    description: "**!CS^3/CS3/CSSS** - About the Cognitive Science Student Society\n**!classes** - About the classes for the current semester\**!program** - About the Cognitive Science program\n**!CUJCS** - About CUJCS\n**!execs** - About the executives of CS^3\n**!meeting** - About CS^3 meetings\n**!HyperCube** - About me! The HyperCube bot! ɔ-【°ッ°】-c"
                     }
                 });
                 break;
@@ -112,7 +113,7 @@ client.on("message", (message) => {
 });
 
 client.on('guildMemberAdd', member => {
-    member.send("Welcome to the SFU Cognitive Science Student Society discord! Glad to have you here!\nWe're a group of students from not just the Cognitive Science program, but also all the sub-disciplines, and any related fields.\n\nIf you need something, I may be able to help. Chack out my commands with !help. Or you can ping one of the executives.\n\nWe have both general and academic channels, so have a look around and feel free to introduce yourself to everyone!")
+    member.send("Welcome to the SFU Cognitive Science Student Society discord! Glad to have you here!\nWe're a group of students from not just the Cognitive Science program, but also all the sub-disciplines, and any related fields.\n\nIf you need something, I may be able to help. Chack out my commands with !help. Or you can ping one of the executives.\n\nWe have both general and academic channels, so have a look around and feel free to introduce yourself to everyone! Also make sure to have a gnader at the #rules before diving in.")
       .catch(console.error);
   });
 
